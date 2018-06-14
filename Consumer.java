@@ -4,7 +4,7 @@ import java.util.*;
  * Beschreiben Sie hier die Klasse Producer.
  * 
  * @author Roland Daidone, Michael Linn 
- * @version 0.1
+ * @version 0.9
  */
 public class Consumer
 {
