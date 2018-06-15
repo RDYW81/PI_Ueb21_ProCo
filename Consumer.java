@@ -6,15 +6,12 @@ import java.util.*;
  * @author Roland Daidone, Michael Linn 
  * @version 0.9
  */
-public class Consumer extends TestRunner 
+public class Consumer 
 {
-
+    private static int zahl;
+    
     //TreeMap-Register
     TreeMap<Integer, ArrayList<Long>> protokoll = new TreeMap<Integer, ArrayList<Long>>();
-    
-    public int getHui() {
-        int first = TestRunner.myQ.poll(myQ);
-    }
 
     /**
      * Diese Methode nimmt einen Integer entgegen und berechnet die Quersumme.
@@ -29,7 +26,8 @@ public class Consumer extends TestRunner
      * @param zahl  zu uebergebende Zahl
      * 
      */
-    public void consume(int zahl) {
+    public void consume() {   // int zahl     
+        zahl = TestRunner.getFirstThenNext(ersteStelle);
         int quersumme = 0;
         while (0 != zahl) {
             // Addiert die letzte Ziffer der uebergebenen Zahl zur Quersumme

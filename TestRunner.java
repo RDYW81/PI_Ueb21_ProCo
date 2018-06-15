@@ -8,7 +8,7 @@ import java.util.*;
 public class TestRunner
 {
     // Instanzvariablen
-    private static final int MADMAX = 10000;
+    private static final int MADMAX = 10000;  //MADMAX klingt cooler als MAX
     private static int zufallsnummer;
     Random ran;
 
@@ -22,6 +22,14 @@ public class TestRunner
     {
         // Instanzvariable initialisieren
         ran = new Random();
+    }
+
+    public int getFirstThenNext() {
+        int ersteStelle = (Integer) myQ.poll();
+        // while ((ersteStelle = myQ.poll()) != 0) {
+        // System.out.println("Entfernt: " + ersteStelle);
+        // }   
+        return ersteStelle;
     }
 
     public void feedMe() {
@@ -42,5 +50,23 @@ public class TestRunner
         int first=myQ.poll();// retrieve and remove the first element
         System.out.println(first);//1
         System.out.println(myQ);//6 3
+
+        Queue<String> queue = new LinkedList<String>();
+        queue.offer("First");
+        queue.offer("Second");
+        queue.offer("Third");
+        queue.offer("Fourth");
+
+        System.out.println("Size: " + queue.size());
+
+        System.out.println("Queue head using peek   : " + queue.peek());
+        System.out.println("Queue head using element: " + queue.element());
+
+        Object data;
+        while ((data = queue.poll()) != null) {
+            System.out.println(data);
+        }
     }
+
 }
+
