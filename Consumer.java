@@ -6,11 +6,15 @@ import java.util.*;
  * @author Roland Daidone, Michael Linn 
  * @version 0.9
  */
-public class Consumer
+public class Consumer extends TestRunner 
 {
 
     //TreeMap-Register
     TreeMap<Integer, ArrayList<Long>> protokoll = new TreeMap<Integer, ArrayList<Long>>();
+    
+    public int getHui() {
+        int first = TestRunner.myQ.poll(myQ);
+    }
 
     /**
      * Diese Methode nimmt einen Integer entgegen und berechnet die Quersumme.

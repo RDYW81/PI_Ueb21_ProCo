@@ -8,12 +8,12 @@ import java.util.*;
 public class TestRunner
 {
     // Instanzvariablen
-    private static final int MAX = 10000;
+    private static final int MADMAX = 10000;
     private static int zufallsnummer;
     Random ran;
 
     // Collection zum Speichern eines Integers
-    ArrayList<Integer> myArrayList = new ArrayList<Integer>();
+    Queue<Integer> myQ = new LinkedList<Integer>();
 
     /**
      * Konstruktor für Objekte der Klasse Consumer
@@ -24,38 +24,23 @@ public class TestRunner
         ran = new Random();
     }
 
-    public void produceAndDoMore() {
-        for (int i = 0; i < MAX; i++) {
+    public void feedMe() {
+        for (int i = 0; i < MADMAX; i++) {
             if (ran.nextInt(2) > 0) {
-                zufallsnummer = Producer.produce(); //ran.nextInt();
-                myArrayList.add(zufallsnummer);
-            } else {
-
+                zufallsnummer =  Producer.produce(); // Erzeugen eines neuen Integers durch den Producer 
+                myQ.add(zufallsnummer);              // und speichern in einer FIFO-Collection
             }
         }
     }
 
-    
-    
-    
-    
-    
-
-    //Nur zum Testzweck
-    public static void main( String args[] ) {
-        // random object
-        Random ran = new Random();
-
-        ArrayList<Integer> myArrayList = new ArrayList<Integer>();
-
-
-        for(int i = 0; i < MAX; i++)
-        if(ran.nextInt(2) > 0 ) {
-        int zahl = ran.nextInt(myArrayList.size()); // Erzeugen eines neuen Integers durch den Producer 
-        myArrayList.add(myArrayList.get(zahl));     // und speichern in einer Collection
-        } else {
-        Integer result = (Integer) myArrayList.get(i); // Entnehmen eines Integeres aus der Collection und Berechnung der
-        //result Quersummen-Berechnung // Quersumme durch den Consumer
-        }
-    }    
+    public static void main(String[] args) {
+        Queue<Integer> myQ=new LinkedList<Integer>();
+        myQ.add(1);
+        myQ.add(6);
+        myQ.add(3);
+        System.out.println(myQ); //1 6 3
+        int first=myQ.poll();// retrieve and remove the first element
+        System.out.println(first);//1
+        System.out.println(myQ);//6 3
+    }
 }
