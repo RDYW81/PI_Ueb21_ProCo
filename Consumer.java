@@ -27,7 +27,7 @@ public class Consumer
      * 
      */
     public void consume() {   // int zahl     
-        zahl = TestRunner.getFirstThenNext(ersteStelle);
+        zahl = TestRunner.getStelle(TestRunner.ersteStelle);
         int quersumme = 0;
         while (0 != zahl) {
             // Addiert die letzte Ziffer der uebergebenen Zahl zur Quersumme
