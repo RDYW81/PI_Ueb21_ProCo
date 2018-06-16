@@ -13,6 +13,14 @@ public class Consumer
     //TreeMap-Register
     TreeMap<Integer, ArrayList<Long>> protokoll = new TreeMap<Integer, ArrayList<Long>>();
 
+    public static int getFirstThenNext() {
+        int ersteStelle = (Integer) TestRunner.myQ.poll();
+        // while ((ersteStelle = myQ.poll()) != 0) {
+        // System.out.println("Entfernt: " + ersteStelle);
+        // }   
+        return ersteStelle;
+    }
+    
     /**
      * Diese Methode nimmt einen Integer entgegen und berechnet die Quersumme.
      * Für jede Quersumme wird ein Zeitstempel der Berechnung erstellt. Jeder
@@ -27,7 +35,7 @@ public class Consumer
      * 
      */
     public void consume() {   // int zahl     
-        zahl = TestRunner.getStelle(TestRunner.ersteStelle);
+        zahl = getFirstThenNext(ersteStelle);
         int quersumme = 0;
         while (0 != zahl) {
             // Addiert die letzte Ziffer der uebergebenen Zahl zur Quersumme

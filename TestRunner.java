@@ -10,11 +10,10 @@ public class TestRunner
     // Instanzvariablen
     private static final int MADMAX = 10000;  //MADMAX klingt cooler als MAX
     private static int zufallsnummer;
-    public static int ersteStelle;
     Random ran;
 
     // Collection zum Speichern eines Integers
-    Queue<Integer> myQ = new LinkedList<Integer>();
+    static Queue<Integer> myQ = new LinkedList<Integer>();
 
     /**
      * Konstruktor für Objekte der Klasse Consumer
@@ -32,11 +31,6 @@ public class TestRunner
         // }   
         return ersteStelle;
     }
-
-    public static int getStelle(int ersteStelle) {
-        return TestRunner.ersteStelle;
-    }
-
 
     public void feedMe() {
         for (int i = 0; i < MADMAX; i++) {
