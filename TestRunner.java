@@ -24,13 +24,13 @@ public class TestRunner
         ran = new Random();
     }
 
-    public int getFirstThenNext() {
-        int ersteStelle = (Integer) myQ.poll();
-        // while ((ersteStelle = myQ.poll()) != 0) {
-        // System.out.println("Entfernt: " + ersteStelle);
-        // }   
-        return ersteStelle;
-    }
+    // public int getFirstThenNext() {
+        // int ersteStelle = (Integer) myQ.poll();
+        // // while ((ersteStelle = myQ.poll()) != 0) {
+        // // System.out.println("Entfernt: " + ersteStelle);
+        // // }   
+        // return ersteStelle;
+    // }
 
     public void feedMe() {
         for (int i = 0; i < MADMAX; i++) {

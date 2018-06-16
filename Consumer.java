@@ -12,30 +12,21 @@ public class Consumer
     
     //TreeMap-Register
     TreeMap<Integer, ArrayList<Long>> protokoll = new TreeMap<Integer, ArrayList<Long>>();
-
-    public static int getFirstThenNext() {
-        int ersteStelle = (Integer) TestRunner.myQ.poll();
-        // while ((ersteStelle = myQ.poll()) != 0) {
-        // System.out.println("Entfernt: " + ersteStelle);
-        // }   
-        return ersteStelle;
-    }
     
     /**
-     * Diese Methode nimmt einen Integer entgegen und berechnet die Quersumme.
-     * Für jede Quersumme wird ein Zeitstempel der Berechnung erstellt. Jeder
-     * Zeitstempel (= Protokoll) wird in einer ArrayList (= occurrences) gespeichert. 
-     * Die occurrences werden wiederrum in einer TreeMap (= Register) hinterlegt,
-     * um effizient darauf zugreifen zu können.
+     * Diese Methode nimmt einen Integer aus der Klasse TestRunner entgegen und berechnet ihre Quersumme.
+     * Für jede Quersumme wird ein Zeitstempel der Berechnung erstellt. Jeder Zeitstempel (= Protokoll) wird 
+     * in einer ArrayList (= occurrences) gespeichert. Die occurrences werden wiederrum in einer 
+     * TreeMap (= Register) hinterlegt, um effizient darauf zugreifen zu können.
      * 
-     * Wenn noch kein Protokoll mit einer errechneten Quersumme angelegt wurde,
-     * dann wird in der ArrayList ein neues Protokoll mit Zeitstempel angelegt.
+     * Wenn noch kein Protokoll mit einer errechneten Quersumme angelegt wurde, dann wird in der ArrayList ein 
+     * neues Protokoll mit Zeitstempel angelegt.
      * 
      * @param zahl  zu uebergebende Zahl
      * 
      */
     public void consume() {   // int zahl     
-        zahl = getFirstThenNext(ersteStelle);
+        int zahl = (Integer) TestRunner.myQ.poll();
         int quersumme = 0;
         while (0 != zahl) {
             // Addiert die letzte Ziffer der uebergebenen Zahl zur Quersumme
