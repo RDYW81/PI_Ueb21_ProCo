@@ -4,7 +4,7 @@ import java.util.*;
  * Beschreiben Sie hier die Klasse Producer.
  * 
  * @author Roland Daidone, Michael Linn 
- * @version 0.9
+ * @version 1.0
  */
 public class Consumer 
 {
@@ -68,18 +68,33 @@ public class Consumer
         ArrayList<Long> occurrences = protokoll.get(quersumme);
         if (occurrences == null)
             return 0;
-
         return occurrences.size();
     }
 
+    /**
+     * Diese Methode gibt die Anzahl der hinterlegten Quersummen in aufsteigender Reihenfolge zurück.
+     * 
+     * @return Quersummen in aufsteigender Reihenfolge.
+     */
     public Set<Integer> getCrossTotalsAscending() {
         return protokoll.keySet();
     }
-
+    
+    /**
+     * Diese Methode gibt die Anzahl der hinterlegten Quersummen in absteigender Reihenfolge zurück.
+     * 
+     * @return Quersummen in absteigender Reihenfolge.
+     */
     public Set<Integer> getCrossTotalsDescending() {
         return protokoll.descendingKeySet();
     }
 
+    /**
+     * Diese Methode gibt zeigt alle hinterlegten Zeitstempel je nach ausgewählter Quersumme an
+     * 
+     * @param quersumme zu übergebende Quersumme
+     * @return Zeitstempel der ausgewählten Quersumme
+     */
     public ArrayList<Long> getTimestampsForResult(int quersumme) {
         return protokoll.get(quersumme);
     }
