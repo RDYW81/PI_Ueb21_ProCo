@@ -8,11 +8,12 @@ import java.util.*;
  */
 public class Consumer 
 {
+    private TestRunner testrunner;
     private static int zahl;
-    
+
     //TreeMap-Register
     TreeMap<Integer, ArrayList<Long>> protokoll = new TreeMap<Integer, ArrayList<Long>>();
-    
+
     /**
      * Diese Methode nimmt einen Integer aus der Klasse TestRunner entgegen und berechnet ihre Quersumme.
      * Für jede Quersumme wird ein Zeitstempel der Berechnung erstellt. Jeder Zeitstempel (= Protokoll) wird 
@@ -25,8 +26,13 @@ public class Consumer
      * @param zahl  zu uebergebende Zahl
      * 
      */
-    public void consume() {   // int zahl     
-        int zahl = (Integer) TestRunner.myQ.poll();
+    public void consume(int zahl) {   // int zahl               
+        
+        // zahl = (Integer) TestRunner.myQ.poll();
+        
+        //while (TestRunner.myQ.size() != 0) {
+        // zahl = (Integer) TestRunner.myQ.poll();
+        // }
         int quersumme = 0;
         while (0 != zahl) {
             // Addiert die letzte Ziffer der uebergebenen Zahl zur Quersumme
